@@ -7,3 +7,115 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* Segunda parte */
+/* Escalar y cambiar un boton */
+.btn:hover {
+    transform: scale(1.05); /*función de transformación que permite cambiar el tamaño de un elemento.*/
+    background-color: #0056b3;
+    /*  all: 
+        Indica que todas las propiedades que cambien en el hover (en este caso, transform y background-color) deben ser animadas. 
+        Se puede reemplazar por propiedades específicas (como background-color o transform) 
+
+        0.3s: Es la duración de la transición. Aquí, la transición durará 0.3 segundos (300 milisegundos).
+
+        ease-in-out: Es el tipo de la función de temporización de la transición. Define cómo cambia la velocidad de la animación:
+        
+            ease-in-out: La animación comienza lentamente, acelera en el medio y luego desacelera al final, creando un efecto más suave.
+            También existen otras funciones de temporización, como:
+            
+            A)linear: La velocidad es constante durante toda la animación.
+            B)ease-in: La animación comienza lentamente y luego acelera.
+            C)ease-out: La animación comienza rápido y luego se desacelera.
+    */
+    transition: all 0.3s ease-in-out;
+}
+
+/*  Animación de Focus (Sombra en campos de texto) */
+.form-control:focus {
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+    border-color: #0056b3;
+}
+
+
+/* Desvanecido */
+.fade-in {
+    /* Establece la opacidad inicial del elemento en 0. */
+    opacity: 0; 
+    /* animation: Es una propiedad CSS que permite definir animaciones. */
+    animation: fadeIn 2s forwards;
+    /*  fadeIn: 
+        Es el nombre de la animación que se ejecutará. 
+        Este nombre hace referencia a los keyframes definidos más abajo.
+        
+        2s: 
+        Es la duración de la animación, que en este caso es de 2 segundos. 
+        Es el tiempo que tarda en completarse la transición de opacidad de 0 a 1. 
+
+        forwards: 
+        Es el valor de la propiedad animation que hace que el estado final de la animación se conserve una vez que esta haya terminado.
+        Esto significa que una vez que la animación se complete (cuando la opacidad llegue a 1), el elemento permanecerá visible (opacidad 1) en lugar de volver a su estado inicial de opacidad 0.
+    */
+}
+
+
+/* 
+    Los keyframes son una forma de definir cómo cambia el estilo de un elemento durante una animación.  
+    Dentro de los keyframes, se definen las etapas de la animación, es decir, cómo debe cambiar el estilo de un elemento a lo largo del tiempo.
+*/
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+    /* 
+        to: 
+        Es una forma abreviada de escribir 100% dentro de los keyframes, lo que significa el estado final de la animación. 
+    */
+}
+
+/* Desplazamiento */
+.slide-in {
+    transform: translateX(-100%);
+    animation: slideIn 1s forwards;
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateX(0);
+    }
+}
+
+
+/* Rebotar del boton */
+/* Define una animación llamada bounce */
+@keyframes bounce {
+    /* Dentro de los keyframes, se definen los estados de la animación en ciertos porcentajes del tiempo (de 0% a 100%). */
+    /* Estos valores son elegidos con el fin de dar una sensación de rebote natural  */
+    0%, 20%, 50%, 80%, 100% {
+        /* translateY(0) mantiene el elemento en su posición original (sin desplazamiento vertical). */
+        transform: translateY(0);
+        /* translateY mueve un elemento a lo largo del eje vertical (Y) en la pantalla. Los valores negativos se utilizan cuando se quiere mover un elemento hacia arriba, mientras que los valores positivos mueven el elemento hacia abajo. */
+    }
+    40% {
+        /* translateY(-10px): El valor negativo mueve el elemento hacia arriba en el eje Y. */
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.btn-bounce:hover {
+    /* Este selector aplica los estilos cuando el usuario pasa el mouse sobre un elemento con la clase .btn-bounce */
+    animation: bounce 1s ease infinite;
+
+    /* 
+    bounce: Este es el nombre de la animación definida previamente en los keyframes.
+    1s: Esta es la duración de la animación.
+
+    ease: Define el tipo de función de temporización 
+    ease significa que la animación comenzará y terminará lentamente, pero será más rápida en el medio, creando un efecto de aceleración y desaceleración suave.
+
+    infinite: Hace que la animación se repita infinitamente. Esto significa que mientras el usuario mantenga el mouse sobre el botón, el botón seguirá haciendo el efecto de rebote una y otra vez.
+ */
+}
