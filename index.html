@@ -9,30 +9,30 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="text-center">Currency Converter</h1>
+        <h1 class="text-center">Convertidor de moneda</h1>
         <div class="card p-4 mt-4">
             <div class="mb-3">
-                <label for="amount" class="form-label">Monto:</label>
-                <input type="number" id="amount" class="form-control" placeholder="Enter amount">
+                <label for="cantidad" class="form-label">Cantidad:</label>
+                <input type="number" id="cantidad" class="form-control" placeholder="Ingresa la cantidad">
             </div>
             <div class="mb-3">
-                <label for="fromCurrency" class="form-label">From:</label>
-                <select id="fromCurrency" class="form-select">
+                <label for="monedaOrigen" class="form-label">De:</label>
+                <select id="monedaOrigen" class="form-select">
                     <option value="USD">USD</option>
                     <option value="EUR">EUR</option>
                     <option value="MXN">MXN</option>
                 </select>
             </div>
             <div class="mb-3">
-                <label for="toCurrency" class="form-label">To:</label>
-                <select id="toCurrency" class="form-select">
+                <label for="monedaDestino" class="form-label">A:</label>
+                <select id="monedaDestino" class="form-select">
                     <option value="USD">USD</option>
                     <option value="EUR">EUR</option>
                     <option value="MXN">MXN</option>
                 </select>
             </div>
-            <button id="convert" class="btn btn-primary w-100">Convert</button>
-            <h2 id="result" class="text-center mt-4"></h2>
+            <button id="convertir" class="btn btn-primary w-100">Convertir</button>
+            <h5 id="resultado" class="text-center mt-4"></h5>
         </div>
     </div>
     <script src="script.js"></script>
